@@ -13,6 +13,7 @@ const Dashboard = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
+    // eslint-disable-next-line
   }, []);
 
   return loading && profile === null ? (
