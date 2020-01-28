@@ -22,7 +22,7 @@ export const getCurrentProfile = () => async dispatch => {
 
 // Create or update profile
 export const createProfile = (
-  FormData,
+  formData,
   history,
   edit = false
 ) => async dispatch => {
@@ -33,7 +33,7 @@ export const createProfile = (
       }
     };
 
-    const res = await axios.post("/api/profile", FormData, config);
+    const res = await axios.post("/api/profile", formData, config);
 
     dispatch({
       type: GET_PROFILE,
@@ -60,7 +60,7 @@ export const createProfile = (
 };
 
 // Add Experience
-export const addExperience = (FormData, history) => async dispatch => {
+export const addExperience = (formData, history) => async dispatch => {
   try {
     const config = {
       headers: {
@@ -68,14 +68,14 @@ export const addExperience = (FormData, history) => async dispatch => {
       }
     };
 
-    const res = await axios.post("/api/profile/experience", FormData, config);
+    const res = await axios.put("/api/profile/experience", formData, config);
 
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data
     });
 
-    dispatch(setAlert("Experience added", "success"));
+    dispatch(setAlert("Experience Added", "success"));
 
     history.push("/dashboard");
   } catch (err) {
@@ -93,7 +93,7 @@ export const addExperience = (FormData, history) => async dispatch => {
 };
 
 // Add Education
-export const addEducation = (FormData, history) => async dispatch => {
+export const addEducation = (formData, history) => async dispatch => {
   try {
     const config = {
       headers: {
@@ -101,14 +101,14 @@ export const addEducation = (FormData, history) => async dispatch => {
       }
     };
 
-    const res = await axios.post("/api/profile/education", FormData, config);
+    const res = await axios.put("/api/profile/education", formData, config);
 
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data
     });
 
-    dispatch(setAlert("Education added", "success"));
+    dispatch(setAlert("Education Added", "success"));
 
     history.push("/dashboard");
   } catch (err) {
