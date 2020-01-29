@@ -9,7 +9,11 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
     getProfiles();
     // eslint-ignore-next-line
   }, []);
-  return null;
+  return (
+    <div>
+      <p>Hello</p>
+    </div>
+  );
 };
 
 Profiles.propTypes = {
@@ -17,8 +21,8 @@ Profiles.propTypes = {
   profile: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => {
-  profile: state.profile;
-};
+const mapStateToProps = state => ({
+  profile: state.profile
+});
 
 export default connect(mapStateToProps, { getProfiles })(Profiles);
