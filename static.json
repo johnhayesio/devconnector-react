@@ -3,6 +3,8 @@
   "routes": {
     "/**": "index.html"
   },
-  "proxies": "https://devn.johnhayes.io"
+  "proxies": {
+    "origin": "https://devn.johnhayes.io"
+  }
 }
 
