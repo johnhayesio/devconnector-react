@@ -4,7 +4,8 @@
     "/**": "index.html"
   },
   "proxies": {
-    "origin": "https://devn.johnhayes.io"
+    "/api/": {
+      "origin": "https://devn.johnhayes.io/api"
+    }
   }
 }
-
