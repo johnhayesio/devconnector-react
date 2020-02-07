@@ -13,6 +13,7 @@ const CreateProfile = ({ createProfile, history }) => {
     skills: "",
     githubusername: "",
     bio: "",
+    github: "",
     twitter: "",
     facebook: "",
     linkedin: "",
@@ -30,6 +31,7 @@ const CreateProfile = ({ createProfile, history }) => {
     skills,
     githubusername,
     bio,
+    github,
     twitter,
     facebook,
     linkedin,
@@ -155,6 +157,17 @@ const CreateProfile = ({ createProfile, history }) => {
 
         {displaySocialInputs && (
           <Fragment>
+            <div className="form-group social-input">
+              <i className="fab fa-github fa-2x"></i>
+              <input
+                type="text"
+                placeholder="Github URL"
+                name="github"
+                value={github}
+                onChange={e => onChange(e)}
+              />
+            </div>
+
             <div className="form-group social-input">
               <i className="fab fa-twitter fa-2x"></i>
               <input

@@ -18,6 +18,7 @@ const EditProfile = ({
     skills: "",
     githubusername: "",
     bio: "",
+    github: "",
     twitter: "",
     facebook: "",
     linkedin: "",
@@ -39,6 +40,7 @@ const EditProfile = ({
       githubusername:
         loading || !profile.githubusername ? "" : profile.githubusername,
       bio: loading || !profile.bio ? "" : profile.bio,
+      github: loading || !profile.social ? "" : profile.social.github,
       twitter: loading || !profile.social ? "" : profile.social.twitter,
       facebook: loading || !profile.social ? "" : profile.social.facebook,
       linkedin: loading || !profile.social ? "" : profile.social.linkedin,
@@ -55,6 +57,7 @@ const EditProfile = ({
     skills,
     githubusername,
     bio,
+    github,
     twitter,
     facebook,
     linkedin,
@@ -180,6 +183,17 @@ const EditProfile = ({
 
         {displaySocialInputs && (
           <Fragment>
+            <div className="form-group social-input">
+              <i className="fab fa-github fa-2x"></i>
+              <input
+                type="text"
+                placeholder="Github URL"
+                name="github"
+                value={github}
+                onChange={e => onChange(e)}
+              />
+            </div>
+
             <div className="form-group social-input">
               <i className="fab fa-twitter fa-2x"></i>
               <input
